@@ -7,13 +7,13 @@ export const colors = {
         light: '#BFBFBF',
     },
     action: {
-        first: '#BDB4D3',
+        first: '#AA9FC4',
         second: '#6FCB86',
     },
     background: {
         extraLight: '#F6F4FE',
         light: '#F0ECFD',
-        medium: '#BDB4D3',
+        medium: '#CDC6DF',
         dark: '#9F99AA',
     },
     shade: {
