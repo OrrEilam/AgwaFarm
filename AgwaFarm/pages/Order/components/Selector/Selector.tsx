@@ -1,15 +1,14 @@
-import { View, Text, Image, FlatList, ListRenderItemInfo, TouchableOpacity } from "react-native"
+import React from "react";
+import { View, Text } from "react-native"
+import { Plant } from "../../../../common/models/Plant";
+import { PlantSelectorItem } from "./PlantSelectorItem/PlantSelectorItem";
+import { PlusSelectorItem } from "./PlusSelectorItem/PlusSelectorItem";
+import { SelectorItemWrapper } from "./SelectorItemWrapper/SelectorItemWrapper";
 import { styles } from "./styles"
 
-interface Plant {
-    name: string;
-    imageURL: string;
-    catagory: string;
-}
-
-const data: Plant[] = [
+const plants: Plant[] = [
     {
-        name: 'Lettuce',
+        name: 'Lettuce Lettuce',
         imageURL: '',
         catagory: 'Green Head'
     },
@@ -23,39 +22,28 @@ const data: Plant[] = [
         imageURL: '',
         catagory: 'Greens'
     },
-    {
-        name: 'Chard',
-        imageURL: '',
-        catagory: 'Greens'
-    },
-    {
-        name: 'Claytonia',
-        imageURL: '',
-        catagory: 'Greens'
-    },
+    // {
+    //     name: 'Lettuce Lettuce',
+    //     imageURL: '',
+    //     catagory: 'Green Head'
+    // },
+    // {
+    //     name: 'Romain',
+    //     imageURL: '',
+    //     catagory: 'Green Head'
+    // },
 ]
 
-interface SelectorItemProps {
-    item: Plant;
-    onDelete: () => void;
-}
-const SelectorItem: React.FC<SelectorItemProps> = (props: SelectorItemProps) => {
-    return (
-        <View style={styles.selectorItem}>
-            <TouchableOpacity onPress={props.onDelete} style={styles.imageWrapper}>
-                <Image source={require('../../../../assets/images/leaf.png')} style={styles.image} />
-                <Text style={styles.delete}>-</Text>
-                <Image source={require('../../../../assets/icons/minus-sign.svg')} style={styles.delete} />
-            </TouchableOpacity>
-            <Text>{props.item.name}</Text>
-        </View>
-    )
-}
+const MAX_SELECTABLES: number = 5;
 
 export const Selector: React.FC = () => {
 
     const onItemDelete = (item: Plant, index: number): void => {
-        alert(item.name);
+        alert(`delete: ${item.name}, ${index}`);
+    }
+
+    const onItemAdd = (index: number): void => {
+        alert(`add: ${index}`);
     }
 
     return (
@@ -65,12 +53,24 @@ export const Selector: React.FC = () => {
             </Text>
             <View style={styles.selector}>
                 {
-                    data.map((item: Plant, index: number) => {
-                        return (
-                            <SelectorItem
+                    plants.map((item: Plant, index: number) => {
+                        return SelectorItemWrapper(
+                            index,
+                            <PlantSelectorItem
                                 key={index}
-                                item={item}
+                                plant={item}
                                 onDelete={() => onItemDelete(item, index)}
+                            />
+                        )
+                    })
+                }
+                {
+                    (new Array(MAX_SELECTABLES - plants.length)).fill(0).map((item: number, index: number) => {
+                        return SelectorItemWrapper(
+                            index,
+                            <PlusSelectorItem
+                                key={index}
+                                onAdd={() => onItemAdd(index)}
                             />
                         )
                     })
