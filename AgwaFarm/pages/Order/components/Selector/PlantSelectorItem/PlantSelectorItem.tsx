@@ -1,13 +1,13 @@
-import { Plant } from "../../../../../common/models/Plant";
+import { IPlant } from "../../../../../common/models/Plant";
 import { Text, Image, TouchableOpacity } from "react-native";
 import { styles } from "./styles";
 
-export interface PlantSelectorItemProps {
-    plant: Plant;
+export interface IPlantSelectorItemProps {
+    plant: IPlant;
     onDelete: () => void;
 }
 
-export const PlantSelectorItem: React.FC<PlantSelectorItemProps> = (props: PlantSelectorItemProps) => {
+export const PlantSelectorItem: React.FC<IPlantSelectorItemProps> = (props: IPlantSelectorItemProps) => {
     return (
         <>
             <TouchableOpacity onPress={props.onDelete} style={styles.plantImageWrapper}>

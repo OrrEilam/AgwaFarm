@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text } from "react-native"
 import { useDispatch, useSelector } from "react-redux";
-import { Plant } from "../../../../common/models/Plant";
+import { IPlant } from "../../../../common/models/Plant";
 import { deletePlant, selectPlantCartMaxItems, selectPlantCartContents } from "../../../../common/store/features/plantCartSlice";
 import { PlantSelectorItem } from "./PlantSelectorItem/PlantSelectorItem";
 import { PlusSelectorItem } from "./PlusSelectorItem/PlusSelectorItem";
@@ -11,10 +11,10 @@ import { styles } from "./styles"
 export const Selector: React.FC = () => {
 
     const dispatch = useDispatch();
-    const plants: Plant[] = useSelector(selectPlantCartContents);
+    const plants: IPlant[] = useSelector(selectPlantCartContents);
     const maxNumberOfPlants: number = useSelector(selectPlantCartMaxItems);
 
-    const onItemDelete = (item: Plant): void => {
+    const onItemDelete = (item: IPlant): void => {
         dispatch(deletePlant(item));
     }
     
@@ -28,7 +28,7 @@ export const Selector: React.FC = () => {
             </Text>
             <View style={styles.selector}>
                 {
-                    plants.map((item: Plant, index: number) => {
+                    plants.map((item: IPlant, index: number) => {
                         return SelectorItemWrapper(
                             index,
                             <PlantSelectorItem

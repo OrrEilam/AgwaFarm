@@ -1,10 +1,10 @@
-import { Plant } from "../models/Plant";
+import { IPlant } from "../models/Plant";
 
 /**
  * The structure of the plant part of the store.
  */
-export interface PlantStore {
-    plants: Plant[];
+export interface IPlantStore {
+    plants: IPlant[];
     maxItems: number;
 }
 

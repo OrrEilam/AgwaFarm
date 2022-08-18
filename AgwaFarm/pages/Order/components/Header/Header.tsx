@@ -3,11 +3,11 @@ import { View, Text, Image, TouchableOpacity } from "react-native";
 import { ScreenName } from "../../../../common/enums/ScreenName";
 import { styles } from "./styles";
 
-export interface HeaderProps {
+export interface IHeaderProps {
     onClose: () => void;
 }
 
-export const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
+export const Header: React.FC<IHeaderProps> = (props: IHeaderProps) => {
     return (
         <View style={styles.container}>
             <Text style={styles.header}>

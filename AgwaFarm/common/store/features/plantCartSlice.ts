@@ -1,13 +1,13 @@
 import { createSlice, createSelector, current } from "@reduxjs/toolkit";
-import { Plant, PlantCatagory } from "../../models/Plant";
-import { PlantStore, SliceName } from "../models";
+import { IPlant, IPlantCatagory } from "../../models/Plant";
+import { IPlantStore, SliceName } from "../models";
 import { RootState } from "../rootReducer";
 
 //#region Constants
 
 const MAX_SELECTABLES: number = 5;
 
-const catagories: PlantCatagory[] = [
+const catagories: IPlantCatagory[] = [
     {
         id: "green_head",
         name: "Green Head",
@@ -28,7 +28,7 @@ const catagories: PlantCatagory[] = [
     },
 ]
 
-const plants: Plant[] = [
+const plants: IPlant[] = [
     {
         id: "pac_choi_mei_qing_choi",
         name: "Pac Choi - Mei Qing Choi",
@@ -54,7 +54,7 @@ const plants: Plant[] = [
 /**
  * The initial state of the plat-store to be used in the plant-slice.
  */
-const initialState: PlantStore = {
+const initialState: IPlantStore = {
     maxItems: MAX_SELECTABLES,
     plants: plants,
 };

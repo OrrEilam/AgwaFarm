@@ -1,7 +1,7 @@
 /**
  * A basic plant-catagory structure.
  */
-export interface PlantCatagory {
+export interface IPlantCatagory {
     id: string;
     name: string;
     minSelection: number;
@@ -11,9 +11,9 @@ export interface PlantCatagory {
 /**
  * A basic plant structure.
  */
-export interface Plant {
+export interface IPlant {
     id: string;
     name: string;
     imageURL: string;
-    catagory: PlantCatagory;
+    catagory: IPlantCatagory;
 }
