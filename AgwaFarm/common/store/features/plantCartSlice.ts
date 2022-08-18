@@ -1,69 +1,28 @@
 import { createSlice, createSelector, current } from "@reduxjs/toolkit";
-import { IPlant, IPlantCatagory } from "../../models/Plant";
-import { IPlantStore, SliceName } from "../models";
+import { SliceName } from "../../enums/SliceName";
+import { IBasePlant } from "../../models/Plant";
+import { IPlantCartStore } from "../models";
 import { RootState } from "../rootReducer";
 
 //#region Constants
 
 const MAX_SELECTABLES: number = 5;
 
-const catagories: IPlantCatagory[] = [
-    {
-        id: "green_head",
-        name: "Green Head",
-        minSelection: 0,
-        maxSelection: 5,
-    },
-    {
-        id: "greens",
-        name: "Greens",
-        minSelection: 0,
-        maxSelection: 5,
-    },
-    {
-        id: "vines",
-        name: "Vines",
-        minSelection: 0,
-        maxSelection: 2,
-    },
-]
-
-const plants: IPlant[] = [
-    {
-        id: "pac_choi_mei_qing_choi",
-        name: "Pac Choi - Mei Qing Choi",
-        catagory: catagories[0],
-        imageURL: '',
-    },
-    {
-        id: "arugula_esmee",
-        name: "Arugula - Esmee",
-        catagory: catagories[1],
-        imageURL: '',
-    },
-    {
-        id: "cucumber_iznik",
-        name: "Cucumber - Iznik",
-        catagory: catagories[2],
-        imageURL: '',
-    },
-]
-
 //#endregion
 
 /**
- * The initial state of the plat-store to be used in the plant-slice.
+ * The initial state of the plant-store to be used in the plant-cart-slice.
  */
-const initialState: IPlantStore = {
+const initialState: IPlantCartStore = {
     maxItems: MAX_SELECTABLES,
-    plants: plants,
+    plants: [],
 };
 
 /**
  * The plant-slice for the plant part of the root-store.
  */
 export const plantsCartSlice = createSlice({
-    name: SliceName.Plant,
+    name: SliceName.PlantCart,
     initialState,
     reducers: {
         /**
@@ -105,7 +64,7 @@ export const { addPlant, deletePlant } = plantsCartSlice.actions;
 //#region Selectors
 
 /**
- * Define a base selector for the 'plant' part of the root-store.
+ * Define a base selector for the 'plant-cart' part of the root-store.
  * @param state The root-state of the root-store.
  * @returns The plant part of the root-store.
  */

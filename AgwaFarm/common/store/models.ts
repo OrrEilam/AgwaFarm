@@ -1,16 +1,17 @@
-import { IPlant } from "../models/Plant";
+import { IBasePlant, IFullPlantInfo, IPlantCatagory } from "../models/Plant";
 
 /**
- * The structure of the plant part of the store.
+ * The structure of the plant-cart part of the store.
  */
-export interface IPlantStore {
-    plants: IPlant[];
+export interface IPlantCartStore {
+    plants: IBasePlant[];
     maxItems: number;
 }
 
 /**
- * An enum for the slice-names, to prevent the usage of magic-strings.
+ * The structure of the plant-info part of the store.
  */
-export enum SliceName {
-    Plant = 'plant',
+export interface IPlantMenuStore {
+    categorizedPlants: IPlantCatagory[];
+    plantsInformation: IFullPlantInfo[];
 }
