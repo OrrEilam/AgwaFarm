@@ -1,9 +1,9 @@
-import { IPlant } from "../../../../../common/models/Plant";
+import { IBasePlant } from "../../../../../common/models/Plant";
 import { Text, Image, TouchableOpacity } from "react-native";
 import { styles } from "./styles";
 
 export interface IPlantSelectorItemProps {
-    plant: IPlant;
+    plant: IBasePlant;
     onDelete: () => void;
 }
 

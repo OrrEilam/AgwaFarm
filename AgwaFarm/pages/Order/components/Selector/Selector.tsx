@@ -1,24 +1,29 @@
 import React from "react";
 import { View, Text } from "react-native"
 import { useDispatch, useSelector } from "react-redux";
-import { IPlant } from "../../../../common/models/Plant";
+import { IBasePlant } from "../../../../common/models/Plant";
 import { deletePlant, selectPlantCartMaxItems, selectPlantCartContents } from "../../../../common/store/features/plantCartSlice";
 import { PlantSelectorItem } from "./PlantSelectorItem/PlantSelectorItem";
 import { PlusSelectorItem } from "./PlusSelectorItem/PlusSelectorItem";
 import { SelectorItemWrapper } from "./SelectorItemWrapper/SelectorItemWrapper";
 import { styles } from "./styles"
 
-export const Selector: React.FC = () => {
+export interface ISelectorProps {
+    onPlantAdd: () => void;
+}
+
+export const Selector: React.FC<ISelectorProps> = (props: ISelectorProps) => {
 
     const dispatch = useDispatch();
-    const plants: IPlant[] = useSelector(selectPlantCartContents);
+    const plants: IBasePlant[] = useSelector(selectPlantCartContents);
     const maxNumberOfPlants: number = useSelector(selectPlantCartMaxItems);
 
-    const onItemDelete = (item: IPlant): void => {
+    const onPlantDelete = (item: IBasePlant): void => {
         dispatch(deletePlant(item));
     }
     
-    const onItemAdd = (): void => {
+    const onPlantAdd = (): void => {
+        props.onPlantAdd();
     }
 
     return (
@@ -28,13 +33,13 @@ export const Selector: React.FC = () => {
             </Text>
             <View style={styles.selector}>
                 {
-                    plants.map((item: IPlant, index: number) => {
+                    plants.map((item: IBasePlant, index: number) => {
                         return SelectorItemWrapper(
                             index,
                             <PlantSelectorItem
                                 key={index}
                                 plant={item}
-                                onDelete={() => onItemDelete(item)}
+                                onDelete={() => onPlantDelete(item)}
                             />
                         )
                     })
@@ -45,7 +50,7 @@ export const Selector: React.FC = () => {
                             index,
                             <PlusSelectorItem
                                 key={index}
-                                onAdd={() => onItemAdd()}
+                                onAdd={() => onPlantAdd()}
                             />
                         )
                     })
