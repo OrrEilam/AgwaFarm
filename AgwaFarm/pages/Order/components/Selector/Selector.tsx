@@ -1,49 +1,24 @@
 import React from "react";
 import { View, Text } from "react-native"
+import { useDispatch, useSelector } from "react-redux";
 import { Plant } from "../../../../common/models/Plant";
+import { deletePlant, selectPlantCartMaxItems, selectPlantCartContents } from "../../../../common/store/features/plantCartSlice";
 import { PlantSelectorItem } from "./PlantSelectorItem/PlantSelectorItem";
 import { PlusSelectorItem } from "./PlusSelectorItem/PlusSelectorItem";
 import { SelectorItemWrapper } from "./SelectorItemWrapper/SelectorItemWrapper";
 import { styles } from "./styles"
 
-const plants: Plant[] = [
-    {
-        name: 'Lettuce Lettuce',
-        imageURL: '',
-        catagory: 'Green Head'
-    },
-    {
-        name: 'Romain',
-        imageURL: '',
-        catagory: 'Green Head'
-    },
-    {
-        name: 'Parsley',
-        imageURL: '',
-        catagory: 'Greens'
-    },
-    // {
-    //     name: 'Lettuce Lettuce',
-    //     imageURL: '',
-    //     catagory: 'Green Head'
-    // },
-    // {
-    //     name: 'Romain',
-    //     imageURL: '',
-    //     catagory: 'Green Head'
-    // },
-]
-
-const MAX_SELECTABLES: number = 5;
-
 export const Selector: React.FC = () => {
 
-    const onItemDelete = (item: Plant, index: number): void => {
-        alert(`delete: ${item.name}, ${index}`);
-    }
+    const dispatch = useDispatch();
+    const plants: Plant[] = useSelector(selectPlantCartContents);
+    const maxNumberOfPlants: number = useSelector(selectPlantCartMaxItems);
 
-    const onItemAdd = (index: number): void => {
-        alert(`add: ${index}`);
+    const onItemDelete = (item: Plant): void => {
+        dispatch(deletePlant(item));
+    }
+    
+    const onItemAdd = (): void => {
     }
 
     return (
@@ -59,18 +34,18 @@ export const Selector: React.FC = () => {
                             <PlantSelectorItem
                                 key={index}
                                 plant={item}
-                                onDelete={() => onItemDelete(item, index)}
+                                onDelete={() => onItemDelete(item)}
                             />
                         )
                     })
                 }
                 {
-                    (new Array(MAX_SELECTABLES - plants.length)).fill(0).map((item: number, index: number) => {
+                    (new Array(maxNumberOfPlants - plants.length)).fill(0).map((item: number, index: number) => {
                         return SelectorItemWrapper(
                             index,
                             <PlusSelectorItem
                                 key={index}
-                                onAdd={() => onItemAdd(index)}
+                                onAdd={() => onItemAdd()}
                             />
                         )
                     })
@@ -78,4 +53,4 @@ export const Selector: React.FC = () => {
             </View>
         </View>
     )
-}
+};
