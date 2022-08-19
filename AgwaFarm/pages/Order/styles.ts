@@ -9,5 +9,13 @@ export const styles = StyleSheet.create({
         flexGrow: 1,
         backgroundColor: colors.background.light,
         padding: '1rem'
-    }
+    },
+    saveButtonContainer: {
+        paddingVertical: '1rem',
+        paddingHorizontal: '2rem',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: colors.background.light,
+    },
 });
