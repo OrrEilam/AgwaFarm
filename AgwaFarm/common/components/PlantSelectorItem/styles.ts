@@ -18,5 +18,8 @@ export const styles = StyleSheet.create({
     plantName: {
         marginTop: '0.5rem',
         textAlign: 'center',
+        fontSize: 12.5,
+        fontWeight: '300',
+        color: colors.text.medium,
     }
 })

@@ -12,7 +12,7 @@ export const styles = StyleSheet.create({
         paddingHorizontal: '1em',
         paddingVertical: '0.5em',
         backgroundColor: colors.background.extraLight,
-        colors: colors.text,
+        colors: colors.text.dark,
         zIndex: 1,
     },
     header: {

@@ -4,7 +4,7 @@ import { styles } from './styles';
 /**
  * The structure of the parameters needed for the component.
  */
-export interface IMenuSectionHeaderProps {
+export interface IMenuSectionTitleProps {
     title: string;
 }
 
@@ -13,7 +13,7 @@ export interface IMenuSectionHeaderProps {
  * @param props The parameters needed for the component (plant-info, events...).
  * @returns The component's JSX render.
  */
-export const MenuSectionHeader: React.FC<IMenuSectionHeaderProps> = (props: IMenuSectionHeaderProps) => {
+export const MenuSectionTitle: React.FC<IMenuSectionTitleProps> = (props: IMenuSectionTitleProps) => {
     return (
         <Text style={styles.sectionHeader}>
             {props.title}

@@ -1,8 +1,9 @@
 export const colors = {
     text: {
         dark: '#161616',
-        medium: '#7B7B7B',
-        light: '#BFBFBF',
+        medium: '#34303D',
+        light: '#7B7B7B',
+        superLight: '#BFBFBF',
     },
     action: {
         first: '#AA9FC4',
