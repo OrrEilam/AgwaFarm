@@ -22,7 +22,7 @@ export const styles = StyleSheet.create({
         textTransform: 'capitalize',
         textAlign: 'center'
     },
-    exit: {
+    closeIconWrapper: {
     },
     closeIcon: {
         height: '0.75rem',

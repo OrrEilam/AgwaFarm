@@ -1,6 +1,11 @@
-const monthNames: string[] = [
-    "January", "February", "March", "April", "May", "June",
-    "July", "August", "September", "October", "November", "December"
+/**
+ * A collection of English month names by their order.
+ */
+const MONTH_NAMES: string[] = [
+    "January", "February", "March",
+    "April", "May", "June",
+    "July", "August", "September",
+    "October", "November", "December"
 ];
 
 /**
@@ -9,7 +14,7 @@ const monthNames: string[] = [
  * @returns The full english name of the given month.
  */
 export const getMonthName = (monthNumber: number = (new Date()).getMonth()): string => {
-    return monthNames[monthNumber];
+    return MONTH_NAMES[monthNumber];
 }
 
 /**

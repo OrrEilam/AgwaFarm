@@ -1,4 +1,4 @@
-import { IPlantCatagory } from "../common/models/Plant";
+import { IPlantCatagory } from "../../common/models/Plant";
 
 export const CATEGORIZED_PLANTS: IPlantCatagory[] = [
     {

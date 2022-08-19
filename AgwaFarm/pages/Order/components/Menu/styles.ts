@@ -26,13 +26,18 @@ export const styles = StyleSheet.create({
         maxHeight: '75vh',
     },
     closeIconWrapper: {
+        zIndex: 3,
         position: 'absolute',
-        top: '0.75rem',
-        right: '0.75rem',
-        width: '1rem',
+        top: '0.5rem',
+        right: '0.5rem',
+        width: '1.75rem',
+        height: '1.75rem',
+        display: 'flex',
+        justifyContent: 'center',
+        alignContent: 'center',
     },
     closeIcon: {
-        width: '75%',
+        width: '50%',
         aspectRatio: 1,
-    }
+    },
 });

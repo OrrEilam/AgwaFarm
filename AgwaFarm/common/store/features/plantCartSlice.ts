@@ -43,7 +43,7 @@ export const plantsCartSlice = createSlice({
         deletePlant: (state, action) => {
             const currentStateValue = current(state);
             const plantIndex: number = currentStateValue.plants.findIndex((item) => item === action.payload);
-            
+
             if (plantIndex !== -1) {
                 let newPlants = [...currentStateValue.plants];
                 newPlants.splice(plantIndex, 1);
@@ -51,7 +51,7 @@ export const plantsCartSlice = createSlice({
             }
         },
     },
-    extraReducers: () => {},
+    extraReducers: () => { },
 });
 
 /**

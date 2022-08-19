@@ -2,8 +2,12 @@ import { Text, View } from "react-native"
 import { getMonthName, getNextMonth } from "../../../../common/methods/dates";
 import { styles } from "./styles"
 
+/**
+ * A component that views the introduction paragraph.
+ * @returns The component's JSX render.
+ */
 export const Introduction: React.FC = () => {
-    
+
     const today = new Date();
 
     return (

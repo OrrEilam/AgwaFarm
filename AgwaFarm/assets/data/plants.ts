@@ -1,4 +1,4 @@
-import { IFullPlantInfo } from "../common/models/Plant";
+import { IFullPlantInfo } from "../../common/models/Plant";
 
 export const PLANTS: IFullPlantInfo[] = [
     {

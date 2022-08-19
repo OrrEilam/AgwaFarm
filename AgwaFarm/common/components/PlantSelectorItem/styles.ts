@@ -1,6 +1,6 @@
 import { StyleSheet } from "react-native";
-import { baseStyles } from "../../../../../common/styles/baseStyles";
-import { colors } from "../../../../../common/styles/colors";
+import { baseStyles } from "../../styles/baseStyles";
+import { colors } from "../../styles/colors";
 
 export const styles = StyleSheet.create({
     plantImageWrapper: {
@@ -14,14 +14,6 @@ export const styles = StyleSheet.create({
     plantImage: {
         height: '75%',
         aspectRatio: 1,
-    },
-    deleteIcon: {
-        zIndex: 1,
-        position: 'absolute',
-        bottom: 0,
-        right: 0,
-        height: '30%',
-        ...baseStyles.roundedCircle,
     },
     plantName: {
         marginTop: '0.5rem',

@@ -1,6 +1,6 @@
-import { createSelector, createSlice, current } from "@reduxjs/toolkit";
-import { CATEGORIZED_PLANTS } from "../../../assets/categories";
-import { PLANTS } from "../../../assets/plants";
+import { createSelector, createSlice } from "@reduxjs/toolkit";
+import { CATEGORIZED_PLANTS } from "../../../assets/data/categories";
+import { PLANTS } from "../../../assets/data/plants";
 import { SliceName } from "../../enums/SliceName";
 import { IPlantMenuStore } from "../models";
 import { RootState } from "../rootReducer";
@@ -26,11 +26,11 @@ export const plantsInfoSlice = createSlice({
 /**
  * Export the main reducer of the slice for convenience.
  */
- export default plantsInfoSlice.reducer;
+export default plantsInfoSlice.reducer;
 
- export const { } = plantsInfoSlice.actions;
+export const { } = plantsInfoSlice.actions;
 
- //#region Selectors
+//#region Selectors
 
 /**
  * Define a base selector for the 'plant-info' part of the root-store.
@@ -41,4 +41,5 @@ export const basePlantSelect = (state: RootState) => state.plantInfo;
 
 export const selectCategorizedPlants = createSelector(basePlantSelect, (state) => state.categorizedPlants);
 export const selectPlantsInfos = createSelector(basePlantSelect, (state) => state.plantsInformation);
+
 //#endregion
