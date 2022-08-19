@@ -12,8 +12,12 @@ export const styles = StyleSheet.create({
         ...baseStyles.roundedCircle,
     },
     plantImage: {
-        height: '75%',
-        aspectRatio: 1,
+        height: '100%',
+        ...baseStyles.roundedCircle,
+    },
+    plantImageReplacement: {
+        height: '60%',
+        ...baseStyles.roundedCircle,
     },
     plantName: {
         marginTop: '0.5rem',

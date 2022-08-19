@@ -4,5 +4,6 @@
 export enum IconName {
     MinusSign = 'minus-sign',
     PlusSign = 'plus-sign',
+    QuestionMark = 'question-mark',
     XSign = 'x-sign',
 }
