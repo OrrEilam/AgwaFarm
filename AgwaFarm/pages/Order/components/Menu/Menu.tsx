@@ -1,7 +1,9 @@
 import React from 'react';
 import { View, Image, Modal, SectionList, Text, TouchableOpacity } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
+import { PlantItem } from '../../../../common/components/PlantSelectorItem/PlantItem';
 import { IconName } from '../../../../common/enums/IconName';
+import { WithActionButton } from '../../../../common/hoc/WithActionButton/WithActionButton';
 import { IBasePlant, IPlantCatagory } from '../../../../common/models/Plant';
 import { addPlant } from '../../../../common/store/features/plantCartSlice';
 import { selectCategorizedPlants } from '../../../../common/store/features/plantInfoSlice';
@@ -64,7 +66,19 @@ export const Menu: React.FC<IMenu> = (props: IMenu) => {
                     </TouchableOpacity>
                     <SectionList
                         sections={categorizedPlants.map((category: IPlantCatagory) => ({ title: category.name, data: category.plants }))}
-                        renderItem={({ item }) => <Text onPress={() => onAddPlant(item)}>{item.name}</Text>}
+                        renderItem={({ item, index }) => {
+                            return WithActionButton({
+                                component: (
+                                    <PlantItem
+                                        key={index}
+                                        plant={item}
+                                        onPress={() => onAddPlant(item)}
+                                    />
+                                ),
+                                onActionPress: () => onAddPlant(item),
+                                iconName: IconName.PlusSign,
+                            })
+                        }}
                         renderSectionHeader={({ section }) => <MenuSectionHeader title={section.title} />}
                     />
                 </View>

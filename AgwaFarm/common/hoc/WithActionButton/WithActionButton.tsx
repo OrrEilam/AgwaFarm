@@ -6,7 +6,7 @@ import { style } from "./styles";
 /**
  * The structure of the parameters needed for the HOC.
  */
-export interface IWithActionButton {
+export interface IWithActionButtonProps {
     component: React.ReactNode;
     iconName: IconName;
     onActionPress: () => void;
@@ -17,7 +17,7 @@ export interface IWithActionButton {
  * @param props The parameters needed for the HOC (component, icon-name, action-handler...).
  * @returns A new JSX.Element with the added functionallity.
  */
-export const WithActionButton = (props: IWithActionButton): JSX.Element => {
+export const WithActionButton = (props: IWithActionButtonProps): JSX.Element => {
     return (
         <TouchableOpacity onPress={props.onActionPress}>
             <>

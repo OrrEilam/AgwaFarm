@@ -19,4 +19,11 @@ export const styles = StyleSheet.create({
         flex: 1,
         flexGrow: 0,
     },
+    selectorItem: {
+        flexBasis: '20%',
+        padding: '0.25rem',
+        display: 'flex',
+        justifyContent: 'flex-start',
+        alignItems: 'center',
+    },
 });
