@@ -55,19 +55,23 @@ export const Menu: React.FC<IMenu> = (props: IMenu) => {
                 visible={props.isOpen}
                 onRequestClose={props.onClose}
             >
-                <View style={styles.container}>
-                    <TouchableOpacity onPress={props.onClose} style={styles.closeIconWrapper}>
-                        <Image
-                            style={styles.closeIcon}
-                            source={require(`../../../../assets/icons/${IconName.XSign}.svg`)}
-                        />
-                    </TouchableOpacity>
-                    <SectionList
-                        sections={categorizedPlants.map((category: IPlantCatagory) => ({ title: category.name, data: category.plants }))}
-                        renderItem={({ item, index }) => null}
-                        renderSectionHeader={({ section }) => <MenuSection section={section} onAddPlant={onAddPlant} />}
-                    />
-                </View>
+                {
+                    props.isOpen && (
+                        <View style={styles.container}>
+                            <TouchableOpacity onPress={props.onClose} style={styles.closeIconWrapper}>
+                                <Image
+                                    style={styles.closeIcon}
+                                    source={require(`../../../../assets/icons/${IconName.XSign}.svg`)}
+                                />
+                            </TouchableOpacity>
+                            <SectionList
+                                sections={categorizedPlants.map((category: IPlantCatagory) => ({ title: category.name, data: category.plants }))}
+                                renderItem={({ item, index }) => null}
+                                renderSectionHeader={({ section }) => <MenuSection section={section} onAddPlant={onAddPlant} />}
+                            />
+                        </View>
+                    )
+                }
             </Modal>
         </>
     )
