@@ -1,5 +1,5 @@
 import React from "react";
-import { Image, TouchableOpacity } from "react-native";
+import { View, Image, TouchableOpacity } from "react-native";
 import { IconName } from "../../enums/IconName";
 import { style } from "./styles";
 
@@ -22,10 +22,12 @@ export const WithActionButton = (props: IWithActionButtonProps): JSX.Element => 
         <TouchableOpacity onPress={props.onActionPress}>
             <>
                 {props.component}
-                <Image
-                    source={require(`../../../assets/icons/${props.iconName}.svg`)}
-                    style={style.deleteIcon}
-                />
+                <View style={style.deleteIconWrapper}>
+                    <Image
+                        source={require(`../../../assets/icons/${props.iconName}.svg`)}
+                        style={style.deleteIcon}
+                    />
+                </View>
             </>
         </TouchableOpacity>
     )

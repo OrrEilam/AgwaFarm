@@ -43,5 +43,6 @@ export const MenuSectionItems: React.FC<IMenuSectionItemsProps> = (props: IMenuS
                 })
             }}
             showsHorizontalScrollIndicator={false}
-        />)
+        />
+    )
 }

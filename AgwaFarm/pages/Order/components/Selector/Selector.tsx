@@ -42,14 +42,6 @@ export const Selector: React.FC<ISelectorProps> = (props: ISelectorProps) => {
         dispatch(deletePlant(item));
     }
 
-    /**
-     * A method to handle the 'add' functionallity of an item in the selector.
-     * This triggers the parent's handler which will allow the user to add an item.
-     */
-    const onPlantAdd = (): void => {
-        props.onPlantAdd();
-    }
-
     //#endregion
 
     return (
@@ -87,7 +79,7 @@ export const Selector: React.FC<ISelectorProps> = (props: ISelectorProps) => {
                             component: (
                                 <PlusSelectorItem
                                     key={index}
-                                    onAdd={() => onPlantAdd()}
+                                    onAdd={() => props.onPlantAdd()}
                                 />
                             )
                         })

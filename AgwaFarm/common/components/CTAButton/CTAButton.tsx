@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, StyleProp, TouchableOpacity, ViewStyle } from "react-native";
+import { Text, TouchableOpacity } from "react-native";
 import { styles } from "./styles";
 
 /**
@@ -8,7 +8,6 @@ import { styles } from "./styles";
 interface ICTAButtonBaseProps {
     onPress: () => void;
     text?: string;
-    wrapperStyle?: StyleProp<ViewStyle>;
     disabled?: boolean;
 }
 
