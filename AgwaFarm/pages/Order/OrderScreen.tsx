@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { View } from 'react-native';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { APIManager } from '../../common/api/APIManager';
 import { CTAButton } from '../../common/components/CTAButton/CTAButton';
-import { IBasePlant } from '../../common/models/Plant';
+import { IBasePlant, IFullPlantInfo, IPlantCatagory } from '../../common/models/Plant';
 import { selectPlantCartContents, selectPlantCartMaxItems } from '../../common/store/features/plantCartSlice';
+import { updatePlantsInformations, updateCategorizedPlants } from '../../common/store/features/plantInfoSlice';
 import { Header } from './components/Header/Header';
 import { Introduction } from './components/Intoduction/Introduction';
 import { Menu } from './components/Menu/Menu';
@@ -18,6 +20,7 @@ export const OrderScreen: React.FC<{}> = () => {
 
     //#region Redux Hooks
 
+    const dispatch = useDispatch();
     const plantCart: IBasePlant[] = useSelector(selectPlantCartContents);
     const maxCartItems: number = useSelector(selectPlantCartMaxItems);
 
@@ -44,6 +47,16 @@ export const OrderScreen: React.FC<{}> = () => {
     const handeOnSave = (): void => {
         // TODO: Implement a save mechanism.
     }
+
+    //#endregion
+
+    //#region Lifecycle Methods
+
+    useEffect(() => {
+        dispatch(updatePlantsInformations(APIManager.Catalog.getPlantsInformations()))
+        dispatch(updateCategorizedPlants(APIManager.Catalog.getCategorizedPlants()))
+    }, [])
+
 
     //#endregion
 

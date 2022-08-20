@@ -1,6 +1,4 @@
 import { createSelector, createSlice } from "@reduxjs/toolkit";
-import { CATEGORIZED_PLANTS } from "../../../assets/data/categories";
-import { PLANTS } from "../../../assets/data/plants";
 import { SliceName } from "../../enums/SliceName";
 import { IPlantMenuStore } from "../models";
 import { RootState } from "../rootReducer";
@@ -9,8 +7,8 @@ import { RootState } from "../rootReducer";
  * The initial state of the plant-store to be used in the plant-info-slice.
  */
 const initialState: IPlantMenuStore = {
-    categorizedPlants: CATEGORIZED_PLANTS,
-    plantsInformation: PLANTS,
+    categorizedPlants: [],
+    plantsInformation: [],
 }
 
 /**
@@ -19,7 +17,24 @@ const initialState: IPlantMenuStore = {
 export const plantsInfoSlice = createSlice({
     name: SliceName.PlantInfo,
     initialState,
-    reducers: {},
+    reducers: {
+        /**
+         * Add a collection of categorized plants to the plant-info-store.
+         * @param state The current state of the store.
+         * @param action The action that was used to trigger this method.
+         */
+        updateCategorizedPlants: (state, action) => {
+            state.categorizedPlants = action.payload;
+        },
+        /**
+         * Add a collection of plants' infos to the plant-info-store.
+         * @param state The current state of the store.
+         * @param action The action that was used to trigger this method.
+         */
+         updatePlantsInformations: (state, action) => {
+            state.plantsInformation = action.payload;
+        },
+    },
     extraReducers: () => { },
 });
 
@@ -28,7 +43,7 @@ export const plantsInfoSlice = createSlice({
  */
 export default plantsInfoSlice.reducer;
 
-export const { } = plantsInfoSlice.actions;
+export const { updateCategorizedPlants, updatePlantsInformations } = plantsInfoSlice.actions;
 
 //#region Selectors
 
