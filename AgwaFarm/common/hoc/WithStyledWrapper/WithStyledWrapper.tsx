@@ -1,9 +1,10 @@
 import { View } from "react-native"
+import { IWithKey } from "../../interfaces/IWithKey";
 
 /**
  * The structure of the parameters needed for the HOC.
  */
-export interface IWithStyledWrapperProps {
+export interface IWithStyledWrapperProps extends IWithKey {
     component: React.ReactNode;
     styles: any;
 }
@@ -15,7 +16,7 @@ export interface IWithStyledWrapperProps {
  */
 export const WithStyledWrapper = (props: IWithStyledWrapperProps): JSX.Element => {
     return (
-        <View style={props.styles}>
+        <View key={props.key} style={props.styles}>
             {props.component}
         </View>
     )

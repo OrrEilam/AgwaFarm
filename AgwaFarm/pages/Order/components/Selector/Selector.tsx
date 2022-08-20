@@ -66,6 +66,7 @@ export const Selector: React.FC<ISelectorProps> = (props: ISelectorProps) => {
                                     ),
                                     onActionPress: () => onPlantDelete(item),
                                     iconName: IconName.MinusSign,
+                                    key: `${index}`
                                 })
                             )
                         })
@@ -81,7 +82,8 @@ export const Selector: React.FC<ISelectorProps> = (props: ISelectorProps) => {
                                     key={index}
                                     onAdd={() => props.onPlantAdd()}
                                 />
-                            )
+                            ),
+                            key: `${index}`
                         })
                     })
                 }

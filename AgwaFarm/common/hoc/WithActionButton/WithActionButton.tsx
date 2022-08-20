@@ -1,12 +1,13 @@
 import React from "react";
 import { View, Image, TouchableOpacity } from "react-native";
 import { IconName } from "../../enums/IconName";
+import { IWithKey } from "../../interfaces/IWithKey";
 import { style } from "./styles";
 
 /**
  * The structure of the parameters needed for the HOC.
  */
-export interface IWithActionButtonProps {
+export interface IWithActionButtonProps extends IWithKey {
     component: React.ReactNode;
     iconName: IconName;
     onActionPress: () => void;
@@ -19,7 +20,7 @@ export interface IWithActionButtonProps {
  */
 export const WithActionButton = (props: IWithActionButtonProps): JSX.Element => {
     return (
-        <TouchableOpacity onPress={props.onActionPress}>
+        <TouchableOpacity key={props.key} onPress={props.onActionPress}>
             <>
                 {props.component}
                 <View style={style.deleteIconWrapper}>

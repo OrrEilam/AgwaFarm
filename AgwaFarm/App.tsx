@@ -11,7 +11,7 @@ export default function App() {
   return (
     <Provider store={store}>
       <NavigationContainer>
-        <Stack.Navigator initialRouteName={ScreenName.Order} screenOptions={{headerShown: false}} >
+        <Stack.Navigator initialRouteName={ScreenName.Order} screenOptions={{ headerShown: false }} >
           <Stack.Screen name={ScreenName.Order} component={OrderScreen} />
         </Stack.Navigator>
       </NavigationContainer>
