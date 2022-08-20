@@ -15,8 +15,8 @@ const PLANTS_INFORMATIONS_URL: string = 'https://dev-agwa-public-static-assets-w
  * A method to retrieve the plants' informations.
  * @returns An array of full-plant-informations.
  */
-const getPlantsInformations = (): IFullPlantInfo[] => {
-    return PLANTS;
+const getPlantsInformations = (): Promise<IFullPlantInfo[]> => {
+    return new Promise<IFullPlantInfo[]>((resolve, reject) => resolve(PLANTS));
     // TODO: consume the data from axios instead of the file.
     // return axios.get(PLANTS_INFORMATIONS_URL)
     //     .then((response) => {
@@ -30,8 +30,8 @@ const getPlantsInformations = (): IFullPlantInfo[] => {
  * A method to retrieve the categorized plants.
  * @returns An array of categorized-plants.
  */
-const getCategorizedPlants = (): IPlantCatagory[] => {
-    return CATEGORIZED_PLANTS;
+const getCategorizedPlants = (): Promise<IPlantCatagory[]> => {
+    return new Promise<IPlantCatagory[]>((resolve, reject) => resolve(CATEGORIZED_PLANTS));
     // TODO: consume the data from axios instead of the file.
     // return axios.get(CATEGORIZED_PLANTS_URL)
     //     .then((response) => {
@@ -47,8 +47,8 @@ const getCategorizedPlants = (): IPlantCatagory[] => {
  * An interface to describe the structure of the catalog's API.
  */
 export interface ICatalogAPI {
-    getPlantsInformations: () => IFullPlantInfo[];
-    getCategorizedPlants: () => IPlantCatagory[];
+    getPlantsInformations: () => Promise<IFullPlantInfo[]>;
+    getCategorizedPlants: () => Promise<IPlantCatagory[]>;
 }
 
 /**

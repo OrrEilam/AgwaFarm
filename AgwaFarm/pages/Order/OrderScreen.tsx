@@ -1,15 +1,15 @@
+import { useDispatch, useSelector } from 'react-redux';
 import React, { useEffect, useState } from 'react';
 import { View } from 'react-native';
-import { useDispatch, useSelector } from 'react-redux';
+import { addPlant, selectPlantCartContents, selectPlantCartMaxItems } from '../../common/store/features/plantCartSlice';
+import { updatePlantsInformations, updateCategorizedPlants } from '../../common/store/features/plantInfoSlice';
+import { IBasePlant, IFullPlantInfo, IPlantCatagory, PlantID } from '../../common/models/Plant';
 import { APIManager } from '../../common/api/APIManager';
 import { CTAButton } from '../../common/components/CTAButton/CTAButton';
-import { IBasePlant, IFullPlantInfo, IPlantCatagory } from '../../common/models/Plant';
-import { selectPlantCartContents, selectPlantCartMaxItems } from '../../common/store/features/plantCartSlice';
-import { updatePlantsInformations, updateCategorizedPlants } from '../../common/store/features/plantInfoSlice';
-import { Header } from './components/Header/Header';
 import { Introduction } from './components/Intoduction/Introduction';
-import { Menu } from './components/Menu/Menu';
 import { Selector } from './components/Selector/Selector';
+import { Header } from './components/Header/Header';
+import { Menu } from './components/Menu/Menu';
 import { styles } from './styles';
 
 /**
@@ -53,8 +53,15 @@ export const OrderScreen: React.FC<{}> = () => {
     //#region Lifecycle Methods
 
     useEffect(() => {
-        dispatch(updatePlantsInformations(APIManager.Catalog.getPlantsInformations()))
-        dispatch(updateCategorizedPlants(APIManager.Catalog.getCategorizedPlants()))
+        APIManager.Catalog.getPlantsInformations()
+            .then((plantsInformations: IFullPlantInfo[]) => dispatch(updatePlantsInformations(plantsInformations)))
+            .catch((error) => {});
+        APIManager.Catalog.getCategorizedPlants()
+            .then((categorizedPlants: IPlantCatagory[]) => dispatch(updateCategorizedPlants(categorizedPlants)))
+            .catch((error) => {});
+        APIManager.Server.getDefaultPlants()
+            .then((plants: IBasePlant[]) => plants.forEach((plant: IBasePlant) => dispatch(addPlant(plant))))
+            .catch((error) => {});
     }, [])
 
 

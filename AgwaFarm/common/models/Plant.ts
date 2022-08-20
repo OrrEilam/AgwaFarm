@@ -1,8 +1,18 @@
 /**
+ * A definition of the plant's ID type.
+ */
+export type PlantID = string;
+
+/**
+ * A definition of a category's ID type.
+ */
+ export type CategoryID = string;
+
+/**
  * A basic plant-catagory structure.
  */
 export interface IPlantCatagory {
-    id: string;
+    id: CategoryID;
     name: string;
     minSelection: number;
     maxSelection: number;
@@ -13,7 +23,7 @@ export interface IPlantCatagory {
  * A basic plant structure.
  */
 export interface IBasePlant {
-    id: string;
+    id: PlantID;
     name: string;
 }
 
