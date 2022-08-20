@@ -5,6 +5,7 @@ import { IconName } from '../../../../common/enums/IconName';
 import { IBasePlant, IPlantCatagory } from '../../../../common/models/Plant';
 import { addPlant } from '../../../../common/store/features/plantCartSlice';
 import { selectCategorizedPlants } from '../../../../common/store/features/plantInfoSlice';
+import { ErrorMessage } from './ErrorMessage/ErrorMessage';
 import { MenuSection } from './MenuSection/MenuSection';
 import { styles } from "./styles";
 
@@ -64,11 +65,17 @@ export const Menu: React.FC<IMenu> = (props: IMenu) => {
                                     source={require(`../../../../assets/icons/${IconName.XSign}.svg`)}
                                 />
                             </TouchableOpacity>
-                            <SectionList
-                                sections={categorizedPlants.map((category: IPlantCatagory) => ({ title: category.name, data: category.plants }))}
-                                renderItem={({ item, index }) => null}
-                                renderSectionHeader={({ section }) => <MenuSection section={section} onAddPlant={onAddPlant} />}
-                            />
+                            {
+                                (categorizedPlants.length === 0)
+                                    ? <ErrorMessage />
+                                    : (
+                                        <SectionList
+                                            sections={categorizedPlants.map((category: IPlantCatagory) => ({ title: category.name, data: category.plants }))}
+                                            renderItem={({ item, index }) => null}
+                                            renderSectionHeader={({ section }) => <MenuSection section={section} onAddPlant={onAddPlant} />}
+                                        />
+                                    )
+                            }
                         </View>
                     )
                 }
