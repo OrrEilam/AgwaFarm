@@ -1,5 +1,4 @@
 import { Image, TouchableOpacity } from "react-native";
-import { IconName } from "../../../../../common/enums/IconName";
 import { styles } from "./styles";
 
 /**
@@ -17,7 +16,7 @@ export interface IPlusSelectorItemProps {
 export const PlusSelectorItem: React.FC<IPlusSelectorItemProps> = (props: IPlusSelectorItemProps) => {
     return (
         <TouchableOpacity onPress={props.onAdd} style={styles.container}>
-            <Image source={require(`../../../../../assets/icons/${IconName.PlusSign}.svg`)} style={styles.addIcon} />
+            <Image source={require(`../../../../../assets/icons/plus-sign.svg`)} style={styles.addIcon} />
         </TouchableOpacity>
     )
 }

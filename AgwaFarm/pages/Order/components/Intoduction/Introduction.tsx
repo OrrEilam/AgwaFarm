@@ -16,11 +16,9 @@ export const Introduction: React.FC = () => {
                 Your next order
             </Text>
             <Text style={styles.description}>
-                The monthly plants order consists of 5 plants.
-                <br />
-                Changes to your next order can be made until the end of {getMonthName(today.getMonth())}.
-                <br />
-                This order will be shipped on the beginning of {getMonthName(getNextMonth(today))}.
+                The monthly plants order consists of 5 plants. {'\n'}
+                Changes to your next order can be made until the end of {getMonthName(today.getMonth())}. {'\n'}
+                This order will be shipped on the beginning of {getMonthName(getNextMonth(today))}. {'\n'}
             </Text>
         </View>
     )

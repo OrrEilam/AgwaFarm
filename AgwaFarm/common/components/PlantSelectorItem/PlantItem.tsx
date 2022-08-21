@@ -37,7 +37,7 @@ export const PlantItem: React.FC<IPlantItemProps> = (props: IPlantItemProps) => 
                     source={
                         fullPlantInfo
                         ? { uri: `https://dev-agwa-public-static-assets-web.s3-us-west-2.amazonaws.com/images/vegetables/${fullPlantInfo.imageID}@3x.jpg` }
-                        : require(`../../../assets/icons/${IconName.QuestionMark}.svg`)
+                        : require(`../../../assets/icons/question-mark.svg`)
                     }
                     style={fullPlantInfo ? styles.plantImage : styles.plantImageReplacement} />
             </TouchableOpacity>

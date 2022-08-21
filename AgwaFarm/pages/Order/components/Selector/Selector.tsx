@@ -3,7 +3,7 @@ import { View, Text } from "react-native";
 import { useDispatch, useSelector } from "react-redux";
 import { deletePlant, selectPlantCartMaxItems, selectPlantCartContents } from "../../../../common/store/features/plantCartSlice";
 import { PlantItem } from "../../../../common/components/PlantSelectorItem/PlantItem";
-import { WithActionButton } from "../../../../common/hoc/WithActionButton/WithActionButton";
+import { ActionType, WithActionButton } from "../../../../common/hoc/WithActionButton/WithActionButton";
 import { PlusSelectorItem } from "./PlusSelectorItem/PlusSelectorItem";
 import { IBasePlant } from "../../../../common/models/Plant";
 import { IconName } from "../../../../common/enums/IconName";
@@ -65,7 +65,7 @@ export const Selector: React.FC<ISelectorProps> = (props: ISelectorProps) => {
                                         />
                                     ),
                                     onActionPress: () => onPlantDelete(item),
-                                    iconName: IconName.MinusSign,
+                                    action: ActionType.Delete,
                                 })
                             ),
                             key: `${index}`

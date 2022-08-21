@@ -2,7 +2,7 @@ import React from "react"
 import { FlatList } from "react-native"
 import { PlantItem } from "../../../../../common/components/PlantSelectorItem/PlantItem"
 import { IconName } from "../../../../../common/enums/IconName"
-import { WithActionButton } from "../../../../../common/hoc/WithActionButton/WithActionButton"
+import { ActionType, WithActionButton } from "../../../../../common/hoc/WithActionButton/WithActionButton"
 import { WithStyledWrapper } from "../../../../../common/hoc/WithStyledWrapper/WithStyledWrapper"
 import { IBasePlant } from "../../../../../common/models/Plant"
 import { styles } from "./styles"
@@ -38,7 +38,7 @@ export const MenuSectionItems: React.FC<IMenuSectionItemsProps> = (props: IMenuS
                             />
                         ),
                         onActionPress: () => props.onAddPlant(item),
-                        iconName: IconName.PlusSign,
+                        action: ActionType.Add,
                     })
                 })
             }}

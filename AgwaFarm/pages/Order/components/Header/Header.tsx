@@ -1,6 +1,5 @@
 import React from "react";
 import { View, Text, Image, TouchableOpacity } from "react-native";
-import { IconName } from "../../../../common/enums/IconName";
 import { ScreenName } from "../../../../common/enums/ScreenName";
 import { styles } from "./styles";
 
@@ -23,7 +22,7 @@ export const Header: React.FC<IHeaderProps> = (props: IHeaderProps) => {
                 {ScreenName.Order}
             </Text>
             <TouchableOpacity style={styles.closeIconWrapper} onPress={props.onClose}>
-                <Image source={require(`../../../../assets/icons/${IconName.XSign}.svg`)} style={styles.closeIcon} />
+                <Image source={require('../../../../assets/icons/x-sign.svg')} style={styles.closeIcon} />
             </TouchableOpacity>
         </View>
     )

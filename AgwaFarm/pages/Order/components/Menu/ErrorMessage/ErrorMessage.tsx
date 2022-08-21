@@ -13,7 +13,7 @@ export const ErrorMessage: React.FC = () => {
                 Could not load menu :\
             </Text>
             <Image
-                source={require(`../../../../assets/icons/${IconName.Plant}.svg`)}
+                source={require(`../../../../../assets/icons/plant.svg`)}
                 style={styles.errorMessageIcon}
             />
             <Text style={styles.errorMessageText}>

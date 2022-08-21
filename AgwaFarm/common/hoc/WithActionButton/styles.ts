@@ -4,7 +4,7 @@ import { colors } from "../../styles/colors";
 import { shadows } from "../../styles/shadows";
 
 export const style = StyleSheet.create({
-    deleteIconWrapper: {
+    actionIconWrapper: {
         zIndex: 3,
         height: '1rem',
         position: 'absolute',
@@ -17,7 +17,7 @@ export const style = StyleSheet.create({
         ...baseStyles.roundedCircle,
         ...shadows.medium,
     },
-    deleteIcon: {
+    actionIcon: {
         height: '75%',
         aspectRatio: 1,
     },

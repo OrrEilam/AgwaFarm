@@ -1,7 +1,6 @@
 import React from 'react';
 import { View, Image, Modal, SectionList, TouchableOpacity } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
-import { IconName } from '../../../../common/enums/IconName';
 import { IBasePlant, IPlantCatagory } from '../../../../common/models/Plant';
 import { addPlant } from '../../../../common/store/features/plantCartSlice';
 import { selectCategorizedPlants } from '../../../../common/store/features/plantInfoSlice';
@@ -62,7 +61,7 @@ export const Menu: React.FC<IMenu> = (props: IMenu) => {
                             <TouchableOpacity onPress={props.onClose} style={styles.closeIconWrapper}>
                                 <Image
                                     style={styles.closeIcon}
-                                    source={require(`../../../../assets/icons/${IconName.XSign}.svg`)}
+                                    source={require(`../../../../assets/icons/x-sign.svg`)}
                                 />
                             </TouchableOpacity>
                             {

@@ -1,16 +1,20 @@
 import React from "react";
 import { View, Image, TouchableOpacity } from "react-native";
-import { IconName } from "../../enums/IconName";
 import { IWithKey } from "../../interfaces/IWithKey";
 import { style } from "./styles";
+
+export enum ActionType {
+    Add,
+    Delete,
+}
 
 /**
  * The structure of the parameters needed for the HOC.
  */
 export interface IWithActionButtonProps extends IWithKey {
     component: React.ReactNode;
-    iconName: IconName;
     onActionPress: () => void;
+    action: ActionType;
 }
 
 /**
@@ -19,15 +23,32 @@ export interface IWithActionButtonProps extends IWithKey {
  * @returns A new JSX.Element with the added functionallity.
  */
 export const WithActionButton = (props: IWithActionButtonProps): JSX.Element => {
+
+    const getIcon = (): JSX.Element => {
+        switch (props.action) {
+            case ActionType.Add:
+                return (
+                    <Image
+                        source={require(`../../../assets/icons/plus-sign.svg`)}
+                        style={style.actionIcon}
+                    />
+                );
+            case ActionType.Delete:
+                return (
+                    <Image
+                        source={require(`../../../assets/icons/minus-sign.svg`)}
+                        style={style.actionIcon}
+                    />
+                );
+        }
+    }
+
     return (
         <TouchableOpacity key={props.key} onPress={props.onActionPress}>
             <>
                 {props.component}
-                <View style={style.deleteIconWrapper}>
-                    <Image
-                        source={require(`../../../assets/icons/${props.iconName}.svg`)}
-                        style={style.deleteIcon}
-                    />
+                <View style={style.actionIconWrapper}>
+                    {getIcon()}
                 </View>
             </>
         </TouchableOpacity>
