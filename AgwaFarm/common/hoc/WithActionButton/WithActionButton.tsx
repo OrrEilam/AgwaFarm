@@ -29,14 +29,14 @@ export const WithActionButton = (props: IWithActionButtonProps): JSX.Element => 
             case ActionType.Add:
                 return (
                     <Image
-                        source={require(`../../../assets/icons/plus-sign.svg`)}
+                        source={require(`../../../assets/icons/plus-sign.png`)}
                         style={style.actionIcon}
                     />
                 );
             case ActionType.Delete:
                 return (
                     <Image
-                        source={require(`../../../assets/icons/minus-sign.svg`)}
+                        source={require(`../../../assets/icons/minus-sign.png`)}
                         style={style.actionIcon}
                     />
                 );

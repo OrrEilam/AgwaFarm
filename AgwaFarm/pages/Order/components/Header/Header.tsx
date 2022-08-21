@@ -22,7 +22,7 @@ export const Header: React.FC<IHeaderProps> = (props: IHeaderProps) => {
                 {ScreenName.Order}
             </Text>
             <TouchableOpacity style={styles.closeIconWrapper} onPress={props.onClose}>
-                <Image source={require('../../../../assets/icons/x-sign.svg')} style={styles.closeIcon} />
+                <Image source={require('../../../../assets/icons/x-sign.png')} style={styles.closeIcon} />
             </TouchableOpacity>
         </View>
     )

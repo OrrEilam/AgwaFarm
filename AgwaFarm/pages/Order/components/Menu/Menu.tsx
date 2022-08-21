@@ -61,7 +61,7 @@ export const Menu: React.FC<IMenu> = (props: IMenu) => {
                             <TouchableOpacity onPress={props.onClose} style={styles.closeIconWrapper}>
                                 <Image
                                     style={styles.closeIcon}
-                                    source={require(`../../../../assets/icons/x-sign.svg`)}
+                                    source={require(`../../../../assets/icons/x-sign.png`)}
                                 />
                             </TouchableOpacity>
                             {
