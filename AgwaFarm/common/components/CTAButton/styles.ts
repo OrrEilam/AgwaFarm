@@ -18,5 +18,6 @@ export const styles = StyleSheet.create({
         color: colors.text.medium,
         fontWeight: '700',
         textTransform: 'uppercase',
+        fontSize: 17.5,
     }
 })

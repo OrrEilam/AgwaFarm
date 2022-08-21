@@ -7,7 +7,7 @@ export const baseStyles = StyleSheet.create({
         backgroundColor: colors.background.extraLight,
     },
     roundedCircle: {
-        borderRadius: Number.MAX_VALUE,
+        borderRadius: 1000000000,
         aspectRatio: 1,
     },
 });
