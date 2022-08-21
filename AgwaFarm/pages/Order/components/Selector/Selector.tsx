@@ -6,7 +6,6 @@ import { PlantItem } from "../../../../common/components/PlantSelectorItem/Plant
 import { ActionType, WithActionButton } from "../../../../common/hoc/WithActionButton/WithActionButton";
 import { PlusSelectorItem } from "./PlusSelectorItem/PlusSelectorItem";
 import { IBasePlant } from "../../../../common/models/Plant";
-import { IconName } from "../../../../common/enums/IconName";
 import { styles } from "./styles";
 import { WithStyledWrapper } from "../../../../common/hoc/WithStyledWrapper/WithStyledWrapper";
 

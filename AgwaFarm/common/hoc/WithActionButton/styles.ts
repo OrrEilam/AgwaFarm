@@ -17,8 +17,12 @@ export const style = StyleSheet.create({
         ...baseStyles.roundedCircle,
         ...shadows.medium,
     },
-    actionIcon: {
+    fullSizeActionIcon: {
         flex: 1,
         aspectRatio: 1,
     },
+    partSizeActionIcon: {
+        flex: 0.7,
+        aspectRatio: 1,
+    }
 })

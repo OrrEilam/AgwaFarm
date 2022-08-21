@@ -1,10 +1,9 @@
+import React from "react";
 import { IBasePlant, IFullPlantInfo } from "../../models/Plant";
 import { Text, Image, TouchableOpacity } from "react-native";
 import { styles } from "./styles";
-import React from "react";
 import { useSelector } from "react-redux";
 import { RootState } from "../../store/rootReducer";
-import { IconName } from "../../enums/IconName";
 
 /**
  * The structure of the parameters needed for the component.

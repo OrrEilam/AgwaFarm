@@ -1,3 +1,4 @@
+import React from "react";
 import { Text, View } from "react-native"
 import { getMonthName, getNextMonth } from "../../../../common/methods/dates";
 import { styles } from "./styles"

@@ -30,14 +30,14 @@ export const WithActionButton = (props: IWithActionButtonProps): JSX.Element => 
                 return (
                     <Image
                         source={require(`../../../assets/icons/plus-sign.png`)}
-                        style={style.actionIcon}
+                        style={style.partSizeActionIcon}
                     />
                 );
             case ActionType.Delete:
                 return (
                     <Image
                         source={require(`../../../assets/icons/minus-sign.png`)}
-                        style={style.actionIcon}
+                        style={style.fullSizeActionIcon}
                     />
                 );
         }

@@ -1,5 +1,5 @@
+import React from "react";
 import { View, Text, Image } from 'react-native';
-import { IconName } from '../../../../../common/enums/IconName';
 import { styles } from "./styles"
 
 /**
