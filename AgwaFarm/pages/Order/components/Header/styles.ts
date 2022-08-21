@@ -9,8 +9,8 @@ export const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center',
-        paddingHorizontal: '1em',
-        paddingVertical: '0.5em',
+        paddingHorizontal: 15,
+        paddingVertical: 7.5,
         backgroundColor: colors.background.extraLight,
         colors: colors.text.dark,
         zIndex: 1,
@@ -25,7 +25,7 @@ export const styles = StyleSheet.create({
     closeIconWrapper: {
     },
     closeIcon: {
-        height: '0.75rem',
-        width: '0.75rem',
+        height: 12.5,
+        width: 12.5,
     }
 });

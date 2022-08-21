@@ -3,13 +3,13 @@ import { colors } from "../../../../common/styles/colors";
 
 export const styles = StyleSheet.create({
     container: {
-        marginVertical: '1rem',
+        marginVertical: 15,
     },
     title: {
         fontSize: 20,
         fontWeight: '500',
         color: colors.text.dark,
-        marginBottom: '0.25rem',
+        marginBottom: 3.75,
     },
     selector: {
         width: '100%',
@@ -21,7 +21,7 @@ export const styles = StyleSheet.create({
     },
     selectorItem: {
         flexBasis: '20%',
-        padding: '0.25rem',
+        padding: 3.75,
         display: 'flex',
         justifyContent: 'flex-start',
         alignItems: 'center',

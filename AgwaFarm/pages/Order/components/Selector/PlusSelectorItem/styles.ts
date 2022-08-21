@@ -13,7 +13,7 @@ export const styles = StyleSheet.create({
     },
     addIcon: {
         zIndex: 1,
-        height: '50%',
+        flex: 0.5,
         aspectRatio: 1
     }
 })

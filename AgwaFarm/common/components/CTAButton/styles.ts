@@ -3,7 +3,7 @@ import { colors } from "../../styles/colors";
 
 export const styles = StyleSheet.create({
     ctaButtonContainer: {
-        padding: '0.5rem',
+        padding: 7.5,
         width: '100%',
         display: 'flex',
         alignItems: 'center',

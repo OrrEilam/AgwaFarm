@@ -12,15 +12,15 @@ export const styles = StyleSheet.create({
         ...baseStyles.roundedCircle,
     },
     plantImage: {
-        height: '100%',
+        flex: 1,
         ...baseStyles.roundedCircle,
     },
     plantImageReplacement: {
-        height: '60%',
+        flex: 0.6,
         ...baseStyles.roundedCircle,
     },
     plantName: {
-        marginTop: '0.5rem',
+        marginTop: 7.5,
         textAlign: 'center',
         fontSize: 12.5,
         fontWeight: '300',

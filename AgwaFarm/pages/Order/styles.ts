@@ -8,11 +8,11 @@ export const styles = StyleSheet.create({
     content: {
         flexGrow: 1,
         backgroundColor: colors.background.light,
-        padding: '1rem'
+        padding: 15,
     },
     saveButtonContainer: {
-        paddingVertical: '1rem',
-        paddingHorizontal: '2rem',
+        paddingVertical: 15,
+        paddingHorizontal: 30,
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',

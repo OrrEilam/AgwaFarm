@@ -6,9 +6,9 @@ export const styles = StyleSheet.create({
         flexDirection: 'row',
     },
     menuItem: {
-        width: '5rem',
+        width: 75,
         height: 'auto',
-        padding: '0.75rem',
+        padding: 11.25,
         display: 'flex',
         justifyContent: 'flex-start',
         alignItems: 'center',

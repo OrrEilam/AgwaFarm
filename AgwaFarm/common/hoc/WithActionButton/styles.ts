@@ -6,10 +6,10 @@ import { shadows } from "../../styles/shadows";
 export const style = StyleSheet.create({
     actionIconWrapper: {
         zIndex: 3,
-        height: '1rem',
+        height: 15,
         position: 'absolute',
-        top: '0.25rem',
-        right: '0.25rem',
+        top: 3.75,
+        right: 3.75,
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
@@ -18,7 +18,7 @@ export const style = StyleSheet.create({
         ...shadows.medium,
     },
     actionIcon: {
-        height: '75%',
+        flex: 1,
         aspectRatio: 1,
     },
 })

@@ -7,9 +7,9 @@ export const styles = StyleSheet.create({
         alignItems: 'center',
     },
     errorMessageIcon: {
-        width: '5rem',
-        height: '5rem',
-        marginVertical: '1rem',
+        width: 75,
+        height: 75,
+        marginVertical: 15,
     },
     errorMessageTitle: {
         fontSize: 20,

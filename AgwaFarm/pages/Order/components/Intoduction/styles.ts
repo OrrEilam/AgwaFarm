@@ -8,7 +8,7 @@ export const styles = StyleSheet.create({
         fontSize: 30,
         fontWeight: '500',
         color: colors.text.dark,
-        marginBottom: '0.25rem',
+        marginBottom: 3.75,
     },
     description: {
         fontSize: 15,
