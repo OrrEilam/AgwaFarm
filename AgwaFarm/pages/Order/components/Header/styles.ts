@@ -17,7 +17,7 @@ export const styles = StyleSheet.create({
     },
     header: {
         flexGrow: 1,
-        fontSize: 20,
+        fontSize: 40,
         fontWeight: '700',
         textTransform: 'capitalize',
         textAlign: 'center'
@@ -25,7 +25,7 @@ export const styles = StyleSheet.create({
     closeIconWrapper: {
     },
     closeIcon: {
-        height: 12.5,
-        width: 12.5,
+        height: 15,
+        width: 15,
     }
 });

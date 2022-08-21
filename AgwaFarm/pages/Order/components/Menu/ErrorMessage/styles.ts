@@ -12,10 +12,10 @@ export const styles = StyleSheet.create({
         marginVertical: 15,
     },
     errorMessageTitle: {
-        fontSize: 20,
+        fontSize: 35,
         fontWeight: '600',
     },
     errorMessageText: {
-        fontSize: 15,
+        fontSize: 20,
     }
 })

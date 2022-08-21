@@ -22,7 +22,7 @@ export const styles = StyleSheet.create({
     plantName: {
         marginTop: 7.5,
         textAlign: 'center',
-        fontSize: 12.5,
+        fontSize: 17.5,
         fontWeight: '300',
         color: colors.text.medium,
     }

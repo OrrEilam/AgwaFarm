@@ -46,7 +46,7 @@ export const Selector: React.FC<ISelectorProps> = (props: ISelectorProps) => {
     return (
         <View style={styles.container}>
             <Text style={styles.title}>
-                Your selected plants:
+                Your selected plants
             </Text>
             <View style={styles.selector}>
                 {/* The already selected plants. */}

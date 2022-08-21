@@ -6,7 +6,7 @@ export const styles = StyleSheet.create({
         marginVertical: 15,
     },
     title: {
-        fontSize: 20,
+        fontSize: 35,
         fontWeight: '500',
         color: colors.text.dark,
         marginBottom: 3.75,

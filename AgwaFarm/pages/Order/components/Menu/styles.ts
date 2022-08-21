@@ -22,9 +22,9 @@ export const styles = StyleSheet.create({
         borderTopLeftRadius: 20,
         position: 'absolute',
         bottom: 0,
-        width: '100%',
+        left: 0,
+        right: 0,
         padding: 15,
-        maxHeight: '75vh',
     },
     closeIconWrapper: {
         zIndex: 3,
