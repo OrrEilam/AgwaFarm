@@ -40,6 +40,12 @@ const getDefaultPlants = (): Promise<IBasePlant[]> => {
     });
 }
 
+const updateExpoToken = (token: string): Promise<void> => {
+    return new Promise<void>((resolve, reject) => {
+        // TODO: send the expo-token to the server so it can send push-notifications. 
+    })
+}
+
 //#endregion
 
 /**
@@ -47,6 +53,7 @@ const getDefaultPlants = (): Promise<IBasePlant[]> => {
  */
 export interface IServerAPI {
     getDefaultPlants: () => Promise<IBasePlant[]>;
+    updateExpoToken: (token: string) => Promise<void>;
 }
 
 /**
@@ -54,4 +61,5 @@ export interface IServerAPI {
  */
 export const ServerAPI: IServerAPI = {
     getDefaultPlants: getDefaultPlants,
+    updateExpoToken: updateExpoToken,
 }
