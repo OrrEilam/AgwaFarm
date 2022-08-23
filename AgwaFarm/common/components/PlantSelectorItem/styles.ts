@@ -20,9 +20,7 @@ export const styles = StyleSheet.create({
         ...baseStyles.roundedCircle,
     },
     plantName: {
-        marginTop: 7.5,
         textAlign: 'center',
-        fontSize: 17.5,
         fontWeight: '300',
         color: colors.text.medium,
     }
